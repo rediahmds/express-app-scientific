@@ -57,7 +57,7 @@ npm install -g pm2
 
 # 12. Run the app with pm2
 echo "Starting the app with pm2..."
-sudo pm2 start app.js
+pm2 start app.js
 
 # 13. Autostart pm2
 echo "Setting up pm2 to autostart..."
