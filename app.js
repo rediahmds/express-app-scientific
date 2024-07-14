@@ -1,12 +1,14 @@
-const os = require('os');
 const express = require('express');
+const { retrieveHostInfo } = require('./utils/sysinfos');
+const { createBody } = require('./utils/body');
 const app = express();
 const port = 8080;
 
-const hostname = os.hostname();
+const { hostName, ipv4 } = retrieveHostInfo();
 
 app.get('/', (req, res) => {
-  res.send(`A warm hello from ${hostname}`);
+  const body = createBody(hostName, ipv4);
+  res.send(body);
 });
 
 app.listen(port, () => {
