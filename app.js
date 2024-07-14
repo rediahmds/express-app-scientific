@@ -2,7 +2,7 @@ const express = require('express');
 const { retrieveHostInfo } = require('./utils/sysinfos');
 const { createBody } = require('./utils/body');
 const app = express();
-const port = 8080;
+const port = process.env.PORT | 80;
 
 const { hostName, ipv4 } = retrieveHostInfo();
 
@@ -12,5 +12,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Express App Scientific listening on port ${port}`);
+  console.log(`Express App Scientific listening on port http://localhost:${port}`);
 });
