@@ -67,4 +67,8 @@ pm2 startup
 echo "Checking pm2 status..."
 pm2 status
 
+# 15. Save pm2 state
+echo "Saving pm2 state..."
+pm2 save
+
 echo "Script execution completed."
