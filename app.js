@@ -2,7 +2,7 @@ const express = require('express');
 const { retrieveHostInfo } = require('./utils/sysinfos');
 const { createBody } = require('./utils/body');
 const app = express();
-const port = process.env.PORT | 8080;
+const port = process.env.PORT | 80;
 
 const { hostName, ipv4 } = retrieveHostInfo();
 
